@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bem-vindo Animado</title>
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg,#001f3f,#003366,#0055aa);
+    color: white;
+    overflow: hidden;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 3rem;
+    margin: 0;
+    opacity: 0;
+    animation: slideDown 1.5s ease forwards;
+  }
+
+  p {
+    margin-top: 15px;
+    opacity: 0;
+    animation: fadeIn 2s ease forwards 1.5s;
+  }
+
+  button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background: linear-gradient(90deg, #6ee7b7, #7dd3fc);
+    color: #042024;
+    opacity: 0;
+    animation: fadeIn 2s ease forwards 3s;
+    transition: transform 0.3s;
+  }
+
+  button:hover {
+    transform: scale(1.1);
+  }
+
+  @keyframes slideDown {
+    0% { opacity: 0; transform: translateY(-50px);}
+    100% { opacity: 1; transform: translateY(0);}
+  }
+
+  @keyframes fadeIn {
+    0% { opacity: 0;}
+    100% { opacity: 1;}
+  }
+
+  /* Bolhas flutuantes no fundo */
+  .bubble {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.15);
+    animation: floatUp linear infinite;
+  }
+
+  @keyframes floatUp {
+    0% { transform: translateY(0) scale(1); opacity:1;}
+    100% { transform: translateY(-1200px) scale(0.5); opacity:0;}
+  }
+</style>
+</head>
+<body>
+
+<!-- Bolhas flutuantes -->
+<div class="bubble" style="width:100px;height:100px;left:10%;bottom:-50px;animation-duration:18s;"></div>
+<div class="bubble" style="width:80px;height:80px;left:40%;bottom:-30px;animation-duration:14s;"></div>
+<div class="bubble" style="width:150px;height:150px;left:70%;bottom:-60px;animation-duration:22s;"></div>
+<div class="bubble" style="width:60px;height:60px;left:85%;bottom:-40px;animation-duration:12s;"></div>
+
+<div>
+  <h1>Bem-vindo ao Meu Site!</h1>
+  <p>Agora com animações e efeitos modernos.</p>
+  <button id="botao">Clique Aqui</button>
+</div>
+
+<script>
+  const btn = document.getElementById('botao');
+  btn.addEventListener('click', ()=>{
+    alert('Parabéns! Você clicou no botão 😎');
+  });
+</script>
+
+</body>
+</html>
+
